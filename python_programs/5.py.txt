@@ -1,0 +1,23 @@
+Program 5: Online Shopping Bill
+Python Code
+amount = float(input("Enter Purchase Amount: "))
+
+if amount >= 1000:
+    discount = amount * 0.10
+else:
+    discount = 0
+
+subtotal = amount - discount
+gst = subtotal * 0.18
+
+final_bill = subtotal + gst
+
+print("Discount =", discount)
+print("GST =", gst)
+print("Final Bill =", final_bill)
+Sample Input
+2000
+Sample Output
+Discount = 200.0
+GST = 324.0
+Final Bill = 2124.0

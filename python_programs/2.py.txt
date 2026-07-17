@@ -1,0 +1,25 @@
+Program 2: Employee Salary Calculator
+Python Code
+basic = float(input("Enter Basic Salary: "))
+
+hra = basic * 0.20
+da = basic * 0.10
+
+gross = basic + hra + da
+
+pf = basic * 0.12
+tax = basic * 0.10
+
+net = gross - pf - tax
+
+print("Gross Salary =", gross)
+print("PF =", pf)
+print("Tax =", tax)
+print("Net Salary =", net)
+Sample Input
+50000
+Sample Output
+Gross Salary = 65000.0
+PF = 6000.0
+Tax = 5000.0
+Net Salary = 54000.0

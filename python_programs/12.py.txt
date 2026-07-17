@@ -1,0 +1,18 @@
+Program 12: Mobile Recharge Billing
+Python Code
+amount = float(input("Enter Recharge Amount: "))
+
+if amount >= 500:
+    cashback = 50
+else:
+    cashback = 20
+
+final_amount = amount - cashback
+
+print("Cashback =", cashback)
+print("Final Amount Paid =", final_amount)
+Sample Input
+500
+Sample Output
+Cashback = 50
+Final Amount Paid = 450.0

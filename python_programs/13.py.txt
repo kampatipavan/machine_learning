@@ -1,0 +1,18 @@
+Program 13: Parking Fee Calculator
+Python Code
+vehicle = input("Enter Vehicle Type (Bike/Car): ")
+hours = int(input("Enter Parking Hours: "))
+
+if vehicle.lower() == "bike":
+    fee = hours * 10
+elif vehicle.lower() == "car":
+    fee = hours * 20
+else:
+    fee = 0
+
+print("Parking Fee =", fee)
+Sample Input
+Car
+3
+Sample Output
+Parking Fee = 60

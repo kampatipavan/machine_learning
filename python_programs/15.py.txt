@@ -1,0 +1,23 @@
+Program 15: Weather Data Analyzer
+Python Code
+temperatures = []
+
+for i in range(7):
+    temp = int(input("Enter Temperature: "))
+    temperatures.append(temp)
+
+print("Maximum Temperature =", max(temperatures))
+print("Minimum Temperature =", min(temperatures))
+print("Average Temperature =", sum(temperatures) / len(temperatures))
+Sample Input
+30
+32
+31
+29
+28
+33
+34
+Sample Output
+Maximum Temperature = 34
+Minimum Temperature = 28
+Average Temperature = 31.0

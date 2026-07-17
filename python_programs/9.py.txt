@@ -1,0 +1,11 @@
+Program 9: Library Fine Calculator
+Python Code
+days = int(input("Enter Overdue Days: "))
+
+fine = days * 2
+
+print("Library Fine =", fine)
+Sample Input
+5
+Sample Output
+Library Fine = 10

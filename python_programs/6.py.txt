@@ -1,0 +1,18 @@
+Program 6: Restaurant Billing System
+Python Code
+food_bill = float(input("Enter Food Bill: "))
+
+gst = food_bill * 0.18
+service_charge = food_bill * 0.05
+
+total = food_bill + gst + service_charge
+
+print("GST =", gst)
+print("Service Charge =", service_charge)
+print("Total Bill =", total)
+Sample Input
+1000
+Sample Output
+GST = 180.0
+Service Charge = 50.0
+Total Bill = 1230.0

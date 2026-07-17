@@ -1,0 +1,23 @@
+Program 4: ATM Withdrawal System
+Python Code
+pin = input("Enter PIN: ")
+
+balance = float(input("Enter Account Balance: "))
+amount = float(input("Enter Withdrawal Amount: "))
+
+if pin == "1234":
+    if amount <= balance:
+        balance = balance - amount
+        print("Transaction Successful")
+        print("Remaining Balance =", balance)
+    else:
+        print("Insufficient Balance")
+else:
+    print("Invalid PIN")
+Sample Input
+1234
+5000
+1000
+Sample Output
+Transaction Successful
+Remaining Balance = 4000.0

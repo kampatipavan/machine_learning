@@ -1,0 +1,18 @@
+Program 11: Vehicle Fuel Cost Estimator
+Python Code
+distance = float(input("Enter Distance (km): "))
+mileage = float(input("Enter Mileage (km/l): "))
+fuel_price = float(input("Enter Fuel Price per Liter: "))
+
+fuel_used = distance / mileage
+cost = fuel_used * fuel_price
+
+print("Fuel Used =", fuel_used)
+print("Total Fuel Cost =", cost)
+Sample Input
+200
+20
+110
+Sample Output
+Fuel Used = 10.0
+Total Fuel Cost = 1100.0

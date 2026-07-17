@@ -1,0 +1,23 @@
+Program 20: Movie Ticket Booking System
+Python Code
+tickets = int(input("Enter Number of Tickets: "))
+category = input("Enter Seat Category (Silver/Gold): ")
+
+if category.lower() == "silver":
+    price = 150
+elif category.lower() == "gold":
+    price = 250
+else:
+    price = 0
+
+total = tickets * price
+
+if tickets >= 5:
+    total = total * 0.9
+
+print("Total Ticket Cost =", total)
+Sample Input
+5
+Gold
+Sample Output
+Total Ticket Cost = 1125.0

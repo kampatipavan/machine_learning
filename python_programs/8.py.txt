@@ -1,0 +1,23 @@
+Program 8: Hospital BMI Calculator
+Python Code
+weight = float(input("Enter Weight (kg): "))
+height = float(input("Enter Height (m): "))
+
+bmi = weight / (height ** 2)
+
+print("BMI =", round(bmi, 2))
+
+if bmi < 18.5:
+    print("Underweight")
+elif bmi < 25:
+    print("Normal")
+elif bmi < 30:
+    print("Overweight")
+else:
+    print("Obese")
+Sample Input
+70
+1.75
+Sample Output
+BMI = 22.86
+Normal

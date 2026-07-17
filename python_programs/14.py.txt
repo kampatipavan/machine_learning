@@ -1,0 +1,19 @@
+Program 14: Attendance Percentage Calculator
+Python Code
+attended = int(input("Classes Attended: "))
+total = int(input("Total Classes: "))
+
+percentage = (attended / total) * 100
+
+print("Attendance Percentage =", percentage)
+
+if percentage >= 75:
+    print("Eligible for Examination")
+else:
+    print("Not Eligible for Examination")
+Sample Input
+90
+100
+Sample Output
+Attendance Percentage = 90.0
+Eligible for Examination

@@ -1,0 +1,19 @@
+Program 7: Bank Interest Calculator
+Python Code
+principal = float(input("Enter Principal: "))
+rate = float(input("Enter Rate: "))
+time = float(input("Enter Time: "))
+
+si = (principal * rate * time) / 100
+
+ci = principal * ((1 + rate / 100) ** time) - principal
+
+print("Simple Interest =", si)
+print("Compound Interest =", round(ci, 2))
+Sample Input
+10000
+5
+2
+Sample Output
+Simple Interest = 1000.0
+Compound Interest = 1025.0

@@ -1,0 +1,14 @@
+Program 19: Inventory Stock Management
+Python Code
+stock = int(input("Enter Current Stock: "))
+minimum = int(input("Enter Minimum Stock Level: "))
+
+if stock < minimum:
+    print("Low Stock! Please Restock.")
+else:
+    print("Stock Level is Sufficient.")
+Sample Input
+8
+10
+Sample Output
+Low Stock! Please Restock.

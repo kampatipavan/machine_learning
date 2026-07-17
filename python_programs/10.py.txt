@@ -1,0 +1,17 @@
+Program 10: Railway Ticket Fare Calculator
+Python Code
+fare = 500
+
+age = int(input("Enter Age: "))
+
+if age < 12:
+    fare = fare * 0.5
+elif age >= 60:
+    fare = fare * 0.7
+
+print("Ticket Fare =", fare)
+Sample Input
+10
+Sample Output
+Ticket Fare = 250.0
+
