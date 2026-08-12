@@ -1,0 +1,115 @@
+import math
+
+# Training data
+# Features: [Hours Studied, Attendance]
+X_train = [
+    [1, 40],
+    [2, 45],
+    [3, 50],
+    [4, 55],
+    [5, 60],
+    [6, 65],
+    [7, 70],
+    [8, 80]
+]
+
+# Target classes
+# 0 = Fail, 1 = Pass
+y_train = [0, 0, 0, 0, 1, 1, 1, 1]
+
+
+# Sigmoid function
+def sigmoid(z):
+    return 1 / (1 + math.exp(-z))
+
+
+# Initialize parameters
+weights = [0.0, 0.0]
+bias = 0.0
+
+learning_rate = float(input("Enter learning rate: "))
+epochs = 1000
+
+
+# Gradient Descent
+for epoch in range(epochs):
+
+    dw = [0.0, 0.0]
+    db = 0.0
+
+    for i in range(len(X_train)):
+
+        # Linear equation
+        z = (weights[0] * X_train[i][0] +
+             weights[1] * X_train[i][1] + bias)
+
+        # Sigmoid output
+        prediction = sigmoid(z)
+
+        error = prediction - y_train[i]
+
+        # Calculate gradients
+        dw[0] += error * X_train[i][0]
+        dw[1] += error * X_train[i][1]
+        db += error
+
+    # Update weights and bias
+    n = len(X_train)
+
+    weights[0] -= learning_rate * dw[0] / n
+    weights[1] -= learning_rate * dw[1] / n
+    bias -= learning_rate * db / n
+
+
+# Test data
+X_test = [
+    [2, 45],
+    [4, 55],
+    [6, 65],
+    [8, 80]
+]
+
+y_test = [0, 0, 1, 1]
+
+
+# Prediction
+predictions = []
+
+print("\nTest Results")
+print("-" * 45)
+
+for i in range(len(X_test)):
+
+    z = (weights[0] * X_test[i][0] +
+         weights[1] * X_test[i][1] + bias)
+
+    probability = sigmoid(z)
+
+    if probability >= 0.5:
+        predicted_class = 1
+    else:
+        predicted_class = 0
+
+    predictions.append(predicted_class)
+
+    print("Input:", X_test[i])
+    print("Sigmoid Output:", round(probability, 4))
+    print("Predicted Class:", predicted_class)
+    print("Actual Class:", y_test[i])
+    print()
+
+
+# Calculate accuracy
+correct = 0
+
+for i in range(len(y_test)):
+    if predictions[i] == y_test[i]:
+        correct += 1
+
+accuracy = (correct / len(y_test)) * 100
+
+print("Final Weights:", weights)
+print("Final Bias:", bias)
+print("Predicted Classes:", predictions)
+print("Actual Classes   :", y_test)
+print("Accuracy:", accuracy, "%")
