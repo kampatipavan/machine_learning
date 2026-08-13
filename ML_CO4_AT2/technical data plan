@@ -1,0 +1,45 @@
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.preprocessing import StandardScaler
+
+# Customer data
+# [Data Usage (GB), Call Minutes, SMS Count]
+X = [
+    [2, 100, 50],
+    [3, 120, 60],
+    [5, 200, 80],
+    [6, 220, 90],
+    [10, 400, 150],
+    [12, 450, 170],
+    [15, 500, 200],
+    [20, 600, 250]
+]
+
+# Plans:
+# 0 = Basic
+# 1 = Standard
+# 2 = Premium
+y = [0, 0, 1, 1, 2, 2, 2, 2]
+
+# Scale the data
+scaler = StandardScaler()
+X_scaled = scaler.fit_transform(X)
+
+# Create KNN model
+knn = KNeighborsClassifier(n_neighbors=3)
+
+# Train the model
+knn.fit(X_scaled, y)
+
+# New customer's usage
+new_customer = [[7, 250, 100]]
+
+# Scale new customer's data
+new_customer_scaled = scaler.transform(new_customer)
+
+# Predict suitable plan
+prediction = knn.predict(new_customer_scaled)
+
+# Display recommendation
+plans = ["Basic Plan", "Standard Plan", "Premium Plan"]
+
+print("Recommended Data Plan:", plans[prediction[0]])

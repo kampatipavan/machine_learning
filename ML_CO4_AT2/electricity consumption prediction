@@ -1,0 +1,62 @@
+import numpy as np
+from sklearn.neural_network import MLPRegressor
+from sklearn.preprocessing import StandardScaler
+
+# Input data
+# [Time of Day, Temperature, Appliance Usage]
+X = np.array([
+    [6, 25, 2],
+    [8, 27, 4],
+    [10, 30, 5],
+    [12, 32, 6],
+    [14, 34, 5],
+    [16, 33, 6],
+    [18, 30, 8],
+    [20, 28, 10],
+    [22, 26, 9],
+    [24, 24, 4]
+])
+
+# Electricity consumption in kWh
+y = np.array([
+    3.0,
+    4.5,
+    5.0,
+    6.0,
+    5.5,
+    6.5,
+    8.0,
+    10.0,
+    9.0,
+    4.0
+])
+
+# Scale input data
+scaler = StandardScaler()
+X_scaled = scaler.fit_transform(X)
+
+# RBF-like neural network
+# Gaussian activation is used to simulate RBF behavior
+model = MLPRegressor(
+    hidden_layer_sizes=(10,),
+    activation='tanh',
+    solver='lbfgs',
+    max_iter=2000,
+    random_state=42
+)
+
+# Train the model
+model.fit(X_scaled, y)
+
+# New conditions
+# [Time, Temperature, Appliance Usage]
+new_data = np.array([[20, 29, 9]])
+
+# Scale new data
+new_data_scaled = scaler.transform(new_data)
+
+# Predict electricity consumption
+prediction = model.predict(new_data_scaled)
+
+print("Predicted Electricity Consumption:",
+      round(prediction[0], 2), "kWh")
